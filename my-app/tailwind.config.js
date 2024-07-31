@@ -22,8 +22,7 @@ module.exports = {
         titleColor: "#1F1F2C",
       },
       fontFamily: {
-        impact: 'Poppins',
-        times: ['Poppins', 'Poppins'],
+        Poppins: 'Poppins',
       },
     },
   },
