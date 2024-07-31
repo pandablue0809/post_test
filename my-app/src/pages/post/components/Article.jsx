@@ -122,7 +122,31 @@ export default function Article() {
                       editorState={editorState}
                       onEditorStateChange={handleEditorChange}
                       toolbar={{
-                        options: ['inline', 'list', 'textAlign', 'link', 'image'],
+                        inline: { inDropdown: false },
+                        list: { inDropdown: false },
+                        textAlign: { inDropdown: false },
+                        link: { inDropdown: false },
+                        history: { inDropdown: false },
+                        image: {
+                          previewImage: true,
+                          uploadCallback: (file) => {
+                            return new Promise((resolve, reject) => {
+                              const reader = new FileReader();
+                              reader.onloadend = () => {
+                                resolve({
+                                  data: {
+                                    url: reader.result,
+                                  },
+                                });
+                              };
+            
+                              reader.onerror = (reason) => reject(reason);
+            
+                              reader.readAsDataURL(file);
+                            });
+                          },
+                          alt: { present: true, mandatory: true },
+                        },
                       }}
                     />
                   </div>
