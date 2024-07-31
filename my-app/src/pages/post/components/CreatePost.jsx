@@ -23,32 +23,28 @@ export default function CreatePost() {
                 editorState={editorState}
                 onEditorStateChange={handleEditorChange}
                 toolbar={{
-                    inline: { inDropdown: false },
-                    list: { inDropdown: false },
-                    textAlign: { inDropdown: false },
-                    link: { inDropdown: false },
-                    history: { inDropdown: false },
+                    options: ['inline', 'list', 'textAlign', 'link','image'],
                     image: {
-                      previewImage: true,
-                      uploadCallback: (file) => {
-                        return new Promise((resolve, reject) => {
-                          const reader = new FileReader();
-                          reader.onloadend = () => {
-                            resolve({
-                              data: {
-                                url: reader.result,
-                              },
-                            });
-                          };
-        
-                          reader.onerror = (reason) => reject(reason);
-        
-                          reader.readAsDataURL(file);
-                        });
+                        previewImage: true,
+                        uploadCallback: (file) => {
+                          return new Promise((resolve, reject) => {
+                            const reader = new FileReader();
+                            reader.onloadend = () => {
+                              resolve({
+                                data: {
+                                  url: reader.result,
+                                },
+                              });
+                            };
+          
+                            reader.onerror = (reason) => reject(reason);
+          
+                            reader.readAsDataURL(file);
+                          });
+                        },
+                        alt: { present: true, mandatory: true },
                       },
-                      alt: { present: true, mandatory: true },
-                    },
-                  }}
+                }}
             />
             <button className='flex felx-row justify-center gap-2 items-center w-[50%] py-3.5 mt-6 rounded-md bg-[radial-gradient(84.9%_100%_at_50%_0%,#8F00FF_0%,#532BC5_100%)] text-white'>
                 <FaCheck className='w-[24px] h-[24px]'/><span className='text-base font-[600]'>Post</span>
