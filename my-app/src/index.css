@@ -18,3 +18,30 @@ body {
   src: url(./assets/font/Poppins-Regular.ttf);
   font-weight: normal;
 }
+
+.rdw-editor-wrapper {
+  border: 1px solid #00000033;
+  border-radius: 8px;
+}
+
+.rdw-editor-toolbar {
+  background: #00000008 !important;
+  padding: 12px !important;
+}
+
+.rdw-option-wrapper {
+  background: none !important;
+}
+
+.rdw-dropdown-wrapper {
+  background: none !important;
+}
+
+.rdw-editor-main {
+  min-height: 300px;
+  padding: 12px !important;
+}
+
+.public-DraftStyleDefault-block {
+  margin: 0 !important;
+}

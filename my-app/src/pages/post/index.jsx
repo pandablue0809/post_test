@@ -2,6 +2,8 @@ import { HiArrowLeft } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import ProfileLink from "./components/ProfileLink";
 import { useState } from "react";
+import CreatePost from "./components/CreatePost";
+import Article from "./components/Article";
 
 export default function Post() {
   const [selectButton, setSelectButton] = useState('post')
@@ -26,6 +28,12 @@ export default function Post() {
             Posts
             <span className={`rounded-xl px-2 ml-2.5 leading-[12px] ${selectButton === "post" ? 'bg-white text-textColor' : 'bg-primaryColor text-white'}`}>4</span>
           </button>
+        </div>
+        <div className="py-16">
+          <CreatePost/>
+        </div>
+        <div>
+          <Article/>
         </div>
       </div>
     </>
