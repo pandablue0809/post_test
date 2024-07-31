@@ -45,3 +45,7 @@ body {
 .public-DraftStyleDefault-block {
   margin: 0 !important;
 }
+
+.rdw-image-center {
+  justify-content: space-between !important;
+}

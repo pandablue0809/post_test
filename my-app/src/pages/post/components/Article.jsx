@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { EditorState, ContentState, convertToRaw } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import draftToHtml from 'draftjs-to-html';
@@ -10,7 +10,7 @@ import img2 from '../../../assets/img/2.png';
 import img3 from '../../../assets/img/3.png';
 import img4 from '../../../assets/img/4.png';
 import img5 from '../../../assets/img/5.png';
-import audio from '../../../assets/img/kenji.mp3';
+import audio from '../../../assets/img/kenji.m4a';
 import { RiDeleteBin4Line } from "react-icons/ri";
 import { MdEdit, MdClose } from "react-icons/md";
 
@@ -25,11 +25,13 @@ const TEST_ARTICLE = [
     title: "Nunc eu quam sit amet justo elementum mollis",
     content: `
       <div class='px-6'>
-        <p class='pb-2.5'><b>Nunc eu quam sit amet justo elementum mollis</b></p>
+        <p class='pb-2.5'><strong>Nunc eu quam sit amet justo elementum mollis</strong></p>
+        <p></p>
         <p class='pb-2.5'>Maecenas quam nunc, sagittis non condimentum at, rutrum sit amet eros. Fusce rutrum, lectus in blandit sagittis, mi tortor ullamcorper mi, vitae vestibulum libero quam a nisi. In eu mauris et neque sodales porta eu eget dui. Nunc eu quam sit amet justo elementum mollis.</p>
+        <p></p>
         <p class='pb-2.5'>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed laoreet metus nulla, in gravida urna rhoncus in. Proin laoreet semper tortor ac posuere.</p>
-        <div class='py-6'>
-          <img src='${img1}' alt='' class='w-[512px]'/>
+        <div class='py-6' style='text-align:left;'>
+        <img src='${img1}' alt='' style='height: auto;width: 520px'/>
         </div>
       </div>
     `,
@@ -82,9 +84,13 @@ const TEST_ARTICLE = [
 ]
 
 export default function Article() {
-  const [edit, setEdit] = useState(null);
+  const [edit, setEdit] = useState(0);
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [htmlContent, setHtmlContent] = useState('');
+
+  useEffect(() => {
+    setEditorState(htmlToEditorState(TEST_ARTICLE[0].content))
+  },[])
 
   const handleEditorChange = (state) => {
     setEditorState(state);
@@ -129,6 +135,11 @@ export default function Article() {
                       <MdClose className='w-[24px] h-[24px]' />Cancel
                     </button>
                   </div>
+                  {/* <textarea
+                      readOnly
+                      value={htmlContent}
+                      style={{ width: '100%', height: '200px' }}
+                  /> */}
                 </div>
               ) : (
                 <div className='mb-[56px]' key={key}>
@@ -160,3 +171,4 @@ export default function Article() {
     </>
   );
 }
+
