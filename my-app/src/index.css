@@ -9,6 +9,9 @@ html {
     font-family: "Poppins";
     font-size: 14px;
   }
+body {
+  background-color: #F9F9F9;
+}
 
 @font-face {
   font-family: Poppins;
