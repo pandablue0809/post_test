@@ -105,7 +105,7 @@ export default function Article() {
     { TEST_ARTICLE.map((item, key) => {
             return(
               key === edit ? (
-                <div className='bg-white rounded-xl p-6 mb-[56px]' key={key}>
+                <div className='shadow-lg bg-white rounded-xl p-6 mb-[56px]' key={key}>
                   <div className='text-base font-bold leading-[24px]'>Edit Post</div>
                   <div className='py-6'>
                     <input
