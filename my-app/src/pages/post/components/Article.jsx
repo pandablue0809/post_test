@@ -65,7 +65,9 @@ const TEST_ARTICLE = [
         <p class='pb-2.5'><b>Proin laoreet semper</b></p>
         <p class='pb-2.5'>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed laoreet metus nulla, in gravida urna rhoncus in. Proin laoreet semper tortor ac posuere. </p>
         <div class='flex flex-row justify-between gap-[24px] py-6'>            
-          <audio src='${audio}'></audio>         
+          <audio controls>
+            <source src='${audio}' type="audio/mpeg">
+          </audio>        
         </div>
       </div>
     `,
