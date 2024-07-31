@@ -1,0 +1,11 @@
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root CSS */
+
+html {
+    font-family: "Poppins";
+    font-size: 14px;
+  }
