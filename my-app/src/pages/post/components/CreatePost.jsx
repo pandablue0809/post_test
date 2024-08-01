@@ -12,12 +12,6 @@ export default function CreatePost() {
             <button className='flex felx-row justify-center gap-2 items-center w-[50%] py-3.5 mt-6 rounded-md bg-[radial-gradient(84.9%_100%_at_50%_0%,#8F00FF_0%,#532BC5_100%)] text-white'>
                 <FaCheck className='w-[24px] h-[24px]'/><span className='text-base font-[600]'>Post</span>
             </button>
-            {/* <h2>Content in HTML:</h2> */}
-            {/* <textarea
-                readOnly
-                value={htmlContent}
-                style={{ width: '100%', height: '200px' }}
-            /> */}
         </div>
     );
 }

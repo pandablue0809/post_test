@@ -10,7 +10,7 @@ export default function Post() {
 
   return (
     <>
-      <div className="max-w-[800px] m-auto py-16">
+      <div className="max-w-[800px] w-[90%] m-auto py-16">
         <div className="py-2.5">
           <Link to='/' className="flex flex-row items-center gap-1">
             <HiArrowLeft className="w-6 h-6"/> <span>Back</span>

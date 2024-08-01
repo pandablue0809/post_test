@@ -78,3 +78,8 @@ body {
 .tox .tox-tbtn {
   background: none !important;
 }
+
+/* .tox-tinymce {
+  min-height: 360px !important;
+  height: auto !important;
+} */
