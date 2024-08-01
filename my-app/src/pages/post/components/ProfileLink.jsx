@@ -16,9 +16,9 @@ export default function ProfileLink() {
               <div className="flex gap-2.5">
                   <span className="text-base text-titleColor font-bold">https://twitter.com/p/12345</span>
                   <MdContentCopy className="w-[24px] h-[24px] text-textColor"/>
-              </div>             
+              </div>          
             </div>          
        </div>
       </>
-    )
-  } 
+    );
+  };

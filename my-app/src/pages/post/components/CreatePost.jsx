@@ -18,12 +18,13 @@ export default function CreatePost() {
 
     return (
         <div>
-            <input type="text" className='bg-white border rounded-md border-[#00000033] w-full py-2.5 px-4 mb-6'/>
+            <input type="text" className='bg-white border rounded-md border-[#00000033] w-full py-2.5 px-4 mb-6' placeholder='Input post title'/>
             <Editor
                 editorState={editorState}
+                placeholder='text'
                 onEditorStateChange={handleEditorChange}
                 toolbar={{
-                    options: ['inline', 'list', 'textAlign', 'link','image'],
+                    options: ['inline', 'list', 'textAlign', 'link','image',],
                     image: {
                         previewImage: true,
                         uploadCallback: (file) => {

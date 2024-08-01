@@ -122,11 +122,7 @@ export default function Article() {
                       editorState={editorState}
                       onEditorStateChange={handleEditorChange}
                       toolbar={{
-                        inline: { inDropdown: false },
-                        list: { inDropdown: false },
-                        textAlign: { inDropdown: false },
-                        link: { inDropdown: false },
-                        history: { inDropdown: false },
+                        options: ['inline', 'list', 'textAlign', 'link','image'],
                         image: {
                           previewImage: true,
                           uploadCallback: (file) => {
@@ -153,22 +149,17 @@ export default function Article() {
                   <div className='flex flex-row justify-between'>
                     <button
                       className='flex flex-row justify-center gap-2 items-center w-[50%] py-3.5 mt-6 rounded-md bg-[radial-gradient(84.9%_100%_at_50%_0%,#8F00FF_0%,#532BC5_100%)] text-white'
-                      
+                      onClick={() => {setEdit(null); }}
                     >
                       <FaCheck className='w-[24px] h-[24px]' /><span className='text-base font-[600]'>Save</span>
                     </button>
                     <button
                       className='flex flex-row justify-end mr-4 gap-2 items-center w-[110px] py-3.5 mt-6 rounded-md text-textColor'
-                      
+                      onClick={() => {setEdit(null); }} 
                     >
                       <MdClose className='w-[24px] h-[24px]' />Cancel
                     </button>
                   </div>
-                  {/* <textarea
-                      readOnly
-                      value={htmlContent}
-                      style={{ width: '100%', height: '200px' }}
-                  /> */}
                 </div>
               ) : (
                 <div className='mb-[56px]' key={key}>
