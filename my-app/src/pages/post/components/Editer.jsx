@@ -1,4 +1,4 @@
-export default function EditPost() {
+export default function BasicEditer() {
     return (
       <>
         <div>
