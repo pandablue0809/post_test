@@ -16,9 +16,7 @@ const TEST_ARTICLE = [
     content: `
       <div class='px-6'>
         <p class='pb-2.5'><strong>Nunc eu quam sit amet justo elementum mollis</strong></p>
-        <p></p>
         <p class='pb-2.5'>Maecenas quam nunc, sagittis non condimentum at, rutrum sit amet eros. Fusce rutrum, lectus in blandit sagittis, mi tortor ullamcorper mi, vitae vestibulum libero quam a nisi. In eu mauris et neque sodales porta eu eget dui. Nunc eu quam sit amet <span style='color: #8F00FF'>justo elementum</span> mollis.</p>
-        <p></p>
         <p class='pb-2.5'>Orci varius natoque penatibus et magnis dis parturient montes, <span style='color: #8F00FF'><ins>nascetur ridiculus mus. Sed laoreet metus nulla</ins></span>, in gravida urna rhoncus in. Proin laoreet semper tortor ac posuere.</p>
         <div class='py-6' style='text-align:left;'>
         <img src='${img1}' alt='' style='height: auto;width: 520px'/>
@@ -32,9 +30,7 @@ const TEST_ARTICLE = [
     content: `
       <div class='px-6'>
         <p class='pb-2.5'><strong>Nunc eu quam sit amet justo elementum mollis</strong></p>
-        <p></p>
         <p class='pb-2.5'>Maecenas quam nunc, sagittis non condimentum at, rutrum sit amet eros. Fusce rutrum, lectus in blandit sagittis, mi tortor ullamcorper mi, vitae vestibulum libero quam a nisi. In eu mauris et neque sodales porta eu eget dui. Nunc eu quam sit amet justo elementum mollis.</p>
-        <p></p>
         <p class='pb-2.5'>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed laoreet metus nulla, in gravida urna rhoncus in. Proin laoreet semper tortor ac posuere.</p>
         <div class='flex flex-row justify-between gap-[24px] py-6'>
           <div class='grid grid-1 gap-[24px]'>
@@ -55,7 +51,6 @@ const TEST_ARTICLE = [
     content: `
       <div class='px-6'>
         <p class='pb-2.5'><strong>Proin laoreet semper</strong></p>
-        <p></p>
         <p class='pb-2.5'>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed laoreet metus nulla, in gravida urna rhoncus in. Proin laoreet semper tortor ac posuere. </p>
         <div class='flex flex-row justify-between gap-[24px] py-6'>            
           <audio controls>
