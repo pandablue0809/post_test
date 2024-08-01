@@ -4,6 +4,7 @@ import { Editor } from 'react-draft-wysiwyg';
 import draftToHtml from 'draftjs-to-html';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'; // Import the editor's CSS
 import { FaCheck } from "react-icons/fa";
+import MyEditor from './Editer';
 
 export default function CreatePost() {
     const [editorState, setEditorState] = useState(EditorState.createEmpty());
@@ -56,6 +57,7 @@ export default function CreatePost() {
                 value={htmlContent}
                 style={{ width: '100%', height: '200px' }}
             /> */}
+            <MyEditor/>
         </div>
     );
 }
