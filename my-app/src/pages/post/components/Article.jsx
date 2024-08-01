@@ -1,9 +1,4 @@
 import { useEffect, useState } from 'react';
-import { EditorState, ContentState, convertToRaw } from 'draft-js';
-import { Editor } from 'react-draft-wysiwyg';
-import draftToHtml from 'draftjs-to-html';
-import htmlToDraft from 'html-to-draftjs'; // Need to install this library
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { FaCheck } from "react-icons/fa";
 import img1 from '../../../assets/img/1.png';
 import img2 from '../../../assets/img/2.png';
@@ -13,12 +8,7 @@ import img5 from '../../../assets/img/5.png';
 import audio from '../../../assets/img/kenji.m4a';
 import { RiDeleteBin4Line } from "react-icons/ri";
 import { MdEdit, MdClose } from "react-icons/md";
-
-const htmlToEditorState = (html) => {
-  const contentBlock = htmlToDraft(html);
-  const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks, contentBlock.entityMap);
-  return EditorState.createWithContent(contentState);
-};
+import MyEditer from './Editer';
 
 const TEST_ARTICLE = [
   {
@@ -89,17 +79,16 @@ const TEST_ARTICLE = [
 ]
 
 export default function Article() {
+  
   const [edit, setEdit] = useState(0);
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
-  const [htmlContent, setHtmlContent] = useState('');
+  const [editorContent, setEditorContent] = useState('');
 
   useEffect(() => {
-    setEditorState(htmlToEditorState(TEST_ARTICLE[0].content))
+    setEditorContent(TEST_ARTICLE[0].content)
   },[])
 
-  const handleEditorChange = (state) => {
-    setEditorState(state);
-    setHtmlContent(draftToHtml(convertToRaw(state.getCurrentContent())));
+  const handleEditorChange = (content, editor) => {
+    setEditorContent(content);
   };
 
   return (
@@ -117,34 +106,8 @@ export default function Article() {
                       defaultValue={item.title}
                     />
                   </div>
-                  <div>
-                    <Editor
-                      editorState={editorState}
-                      onEditorStateChange={handleEditorChange}
-                      toolbar={{
-                        options: ['inline', 'list', 'textAlign', 'link','image'],
-                        image: {
-                          previewImage: true,
-                          uploadCallback: (file) => {
-                            return new Promise((resolve, reject) => {
-                              const reader = new FileReader();
-                              reader.onloadend = () => {
-                                resolve({
-                                  data: {
-                                    url: reader.result,
-                                  },
-                                });
-                              };
-            
-                              reader.onerror = (reason) => reject(reason);
-            
-                              reader.readAsDataURL(file);
-                            });
-                          },
-                          alt: { present: true, mandatory: true },
-                        },
-                      }}
-                    />
+                  <div>                    
+                    <MyEditer value={editorContent} onEditorChange={handleEditorChange}/>
                   </div>
                   <div className='flex flex-row justify-between'>
                     <button
@@ -169,7 +132,7 @@ export default function Article() {
                     <div className='flex flex-row gap-2 items-center'>
                       <button
                         className='flex flex-row items-center gap-1 bg-[#C4C4C4] rounded-2xl hover:bg-primaryColor px-4 py-1 text-white'
-                        onClick={() => { setEdit(key); setEditorState(htmlToEditorState(item.content)) }}
+                        onClick={() => { setEdit(key); setEditorContent(item.content) }}
                       >
                         <MdEdit className='w-[16px] h-[16px]' /><span>Edit</span>
                       </button>

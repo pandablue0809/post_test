@@ -49,3 +49,32 @@ body {
 .rdw-image-center {
   justify-content: space-between !important;
 }
+
+.tox-menubar {
+  display: none !important;
+}
+
+.tox-tinymce {
+  border: 1px solid #00000033 !important;
+  border-radius: 8px !important;
+}
+
+.tox-statusbar{
+  display: none !important;
+}
+
+.tox-editor-header {
+  background: #00000008 !important;
+  box-shadow:none !important;
+}
+
+.tox-toolbar__primary {
+  gap: 20px;
+}
+.tox-toolbar-overlord, .tox-toolbar__primary, .tox-toolbar__group {
+  background: none !important;
+}
+
+.tox .tox-tbtn {
+  background: none !important;
+}
